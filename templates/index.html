@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Оставьте отзыв</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/static/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<!--===============================================================================================-->
+
+<style>
+
+    /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+    .rating-group {
+      display: inline-flex;
+    }
+
+    /* make hover effect work properly in IE */
+    .rating__icon {
+      pointer-events: none;
+    }
+
+    /* hide radio inputs */
+    .rating__input {
+     position: absolute !important;
+     left: -9999px !important;
+    }
+
+    /* hide 'none' input from screenreaders */
+    .rating__input--none {
+      display: none
+    }
+
+    /* set icon padding and size */
+    .rating__label {
+      cursor: pointer;
+      padding: 0 0.1em;
+      font-size: 2.5rem;
+    }
+
+    /* set default star color */
+    .rating__icon--star {
+      color: #00b7f4;
+    }
+
+    /* if any input is checked, make its following siblings grey */
+    .rating__input:checked ~ .rating__label .rating__icon--star {
+      color: #b9deeb;
+    }
+
+    /* make all stars orange on rating group hover */
+    .rating-group:hover .rating__label .rating__icon--star {
+      color: #00b7f4;
+    }
+
+    /* make hovered input's following siblings grey on hover */
+    .rating__input:hover ~ .rating__label .rating__icon--star {
+      color: #b9deeb;
+    }
+</style>
+
+
+
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('/static/images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+				<form class="login100-form validate-form flex-sb flex-w" method="POST" action="leavefdb">
+					<span class="login100-form-title p-b-25">
+						Оставьте Ваш отзыв
+					</span>
+
+					<div class="rating-group" style="margin-left: 130px; margin-bottom: 30px;">
+							<input disabled checked class="rating__input rating__input--none" name="rating1" id="rating3-none" value="0" type="radio">
+							<label aria-label="1 star" class="rating__label" for="rating1-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+							<input class="rating__input" name="rating1" id="rating1-1" value="1" type="radio">
+							<label aria-label="2 stars" class="rating__label" for="rating1-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+							<input class="rating__input" name="rating1" id="rating1-2" value="2" type="radio">
+							<label aria-label="3 stars" class="rating__label" for="rating1-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+							<input class="rating__input" name="rating1" id="rating1-3" value="3" type="radio">
+							<label aria-label="4 stars" class="rating__label" for="rating1-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+							<input class="rating__input" name="rating1" id="rating1-4" value="4" type="radio">
+							<label aria-label="5 stars" class="rating__label" for="rating1-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+							<input class="rating__input" name="rating1" id="rating1-5" value="5" type="radio">
+					</div>
+
+					<div class="wrap-input100 validate-input" style="height:180px;" data-validate = "Нужно заполнить поле">
+						<input class="input100" type="text" name="review"  style="font-family: Poppins-Regular, sans-serif;">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="container-login100-form-btn m-t-17">
+						<button class="login100-form-btn" style="font-family: Poppins-Regular, sans-serif;">
+							Отправить
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/static/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title Page-->
+    <title>Рабочий стол</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="/static/css/font-face.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="/static/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="/static/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="/static/css/theme.css" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="/static/images/icon/img_387338.png" style="max-width: 50px;" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Рабочий стол</a>
+                        </li>
+                        <li>
+                            <a href="/history">
+                                <i class="fas fa-chart-bar"></i>История</a>
+                        </li>
+                        <li>
+                            <a href="/upload">
+                                <i class="fas fa-table"></i>Загрузка</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="/static/images/icon/img_387338.png" style="max-width: 50px;" alt="Cool Admin" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Рабочий стол</a>
+                        </li>
+                        <li>
+                            <a href="/history">
+                                <i class="fas fa-align-justify"></i>История</a>
+                        </li>
+                        <li>
+                            <a href="/upload">
+                                <i class="fas fa-upload"></i>Загрузка</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+              <div class="section__content section__content--p30">
+                  <div class="container-fluid">
+                      <div class="header-wrap">
+                        <h2 class="title-2" style="text-transform: inherit;">Автоматизированная система оценки анализа тональности отзывов пользователей</h2>
+                      </div>
+                  </div>
+              </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="overview-wrap">
+                                    <h2 class="title-1">Рабочий стол</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-t-25">
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="overview-item overview-item--c1">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="fas fa-comment"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>{{ panel["all_reviews"] }}</h2>
+                                                <span>Количество отзывов</span>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <canvas id="widgetChart1"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="overview-item overview-item--c2">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="fas fa-tag"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>{{ panel["median_raiting"] }}</h2>
+                                                <span>Средний рейтинг</span>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <canvas id="widgetChart2"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="overview-item overview-item--c3">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="fas fa-plus"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>{{ panel["new_reviews"] }}</h2>
+                                                <span>Новых отзывов</span>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <canvas id="widgetChart3"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="au-card recent-report">
+                                    <div class="au-card-inner">
+                                        <h3 class="title-2">Оценка анализа</h3>
+                                        <div class="chart-info" style="margin-top:10px;">
+                                            <div class="chart-info__left">
+                                                <div class="chart-note">
+                                                    <span class="dot dot--blue"></span>
+                                                    <span>Accuracy</span>
+                                                </div>
+                                                <div class="chart-note mr-0">
+                                                    <span class="dot dot--green"></span>
+                                                    <span>F1</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="recent-report__chart">
+                                            <canvas id="recent-rep-chart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="au-card chart-percent-card">
+                                    <div class="au-card-inner">
+                                        <h3 class="title-2 tm-b-5">Классификация отзывов</h3>
+                                        <div class="row no-gutters">
+                                            <div class="col-xl-6">
+                                                <div class="chart-note-wrap">
+                                                    <div class="chart-note mr-0 d-block">
+                                                        <span class="dot dot--blue"></span>
+                                                        <span>Положительные</span>
+                                                    </div>
+                                                    <div class="chart-note mr-0 d-block">
+                                                        <span class="dot dot--red"></span>
+                                                        <span>Отрицательные</span>
+                                                    </div>
+                                                    <div class="chart-note mr-0 d-block">
+                                                        <span class="dot dot--green"></span>
+                                                        <span>Отрицательные</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="percent-chart">
+                                                    <canvas id="percent-chart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="/static/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="/static/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="/static/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="/static/vendor/slick/slick.min.js">
+    </script>
+    <script src="/static/vendor/wow/wow.min.js"></script>
+    <script src="/static/vendor/animsition/animsition.min.js"></script>
+    <script src="/static/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="/static/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="/static/vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="/static/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="/static/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/static/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="/static/vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script>
+
+    (function ($) {
+      // USE STRICT
+      "use strict";
+
+      try {
+        //WidgetChart 1
+        var ctx = document.getElementById("widgetChart1");
+        if (ctx) {
+          ctx.height = 130;
+          var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: ['1', '2', '3', '4', '5', '6', '7'],
+              type: 'line',
+              datasets: [{
+                data: {{panel["all_reviews_data"]}},
+                label: 'Данные',
+                backgroundColor: 'rgba(255,255,255,.1)',
+                borderColor: 'rgba(255,255,255,.55)',
+              },]
+            },
+            options: {
+              maintainAspectRatio: true,
+              legend: {
+                display: false
+              },
+              layout: {
+                padding: {
+                  left: 0,
+                  right: 0,
+                  top: 0,
+                  bottom: 0
+                }
+              },
+              responsive: true,
+              scales: {
+                xAxes: [{
+                  gridLines: {
+                    color: 'transparent',
+                    zeroLineColor: 'transparent'
+                  },
+                  ticks: {
+                    fontSize: 2,
+                    fontColor: 'transparent'
+                  }
+                }],
+                yAxes: [{
+                  display: false,
+                  ticks: {
+                    display: false,
+                  }
+                }]
+              },
+              title: {
+                display: false,
+              },
+              elements: {
+                line: {
+                  borderWidth: 0
+                },
+                point: {
+                  radius: 0,
+                  hitRadius: 10,
+                  hoverRadius: 4
+                }
+              }
+            }
+          });
+        }
+
+
+        //WidgetChart 2
+        var ctx = document.getElementById("widgetChart2");
+        if (ctx) {
+          ctx.height = 130;
+          var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: ['1', '2', '3', '4', '5', '6'],
+              type: 'line',
+              datasets: [{
+                data: {{panel["median_raiting_data"]}},
+                label: 'Данные',
+                backgroundColor: 'transparent',
+                borderColor: 'rgba(255,255,255,.55)',
+              },]
+            },
+            options: {
+
+              maintainAspectRatio: false,
+              legend: {
+                display: false
+              },
+              responsive: true,
+              tooltips: {
+                mode: 'index',
+                titleFontSize: 12,
+                titleFontColor: '#000',
+                bodyFontColor: '#000',
+                backgroundColor: '#fff',
+                titleFontFamily: 'Montserrat',
+                bodyFontFamily: 'Montserrat',
+                cornerRadius: 3,
+                intersect: false,
+              },
+              scales: {
+                xAxes: [{
+                  gridLines: {
+                    color: 'transparent',
+                    zeroLineColor: 'transparent'
+                  },
+                  ticks: {
+                    fontSize: 2,
+                    fontColor: 'transparent'
+                  }
+                }],
+                yAxes: [{
+                  display: false,
+                  ticks: {
+                    display: false,
+                  }
+                }]
+              },
+              title: {
+                display: false,
+              },
+              elements: {
+                line: {
+                  tension: 0.00001,
+                  borderWidth: 1
+                },
+                point: {
+                  radius: 4,
+                  hitRadius: 10,
+                  hoverRadius: 4
+                }
+              }
+            }
+          });
+        }
+
+
+        //WidgetChart 3
+        var ctx = document.getElementById("widgetChart3");
+        if (ctx) {
+          ctx.height = 130;
+          var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: ['1', '2', '3', '4', '5', '6'],
+              type: 'line',
+              datasets: [{
+                data: {{panel["new_reviews_data"]}},
+                label: 'Данные',
+                backgroundColor: 'transparent',
+                borderColor: 'rgba(255,255,255,.55)',
+              },]
+            },
+            options: {
+
+              maintainAspectRatio: false,
+              legend: {
+                display: false
+              },
+              responsive: true,
+              tooltips: {
+                mode: 'index',
+                titleFontSize: 12,
+                titleFontColor: '#000',
+                bodyFontColor: '#000',
+                backgroundColor: '#fff',
+                titleFontFamily: 'Montserrat',
+                bodyFontFamily: 'Montserrat',
+                cornerRadius: 3,
+                intersect: false,
+              },
+              scales: {
+                xAxes: [{
+                  gridLines: {
+                    color: 'transparent',
+                    zeroLineColor: 'transparent'
+                  },
+                  ticks: {
+                    fontSize: 2,
+                    fontColor: 'transparent'
+                  }
+                }],
+                yAxes: [{
+                  display: false,
+                  ticks: {
+                    display: false,
+                  }
+                }]
+              },
+              title: {
+                display: false,
+              },
+              elements: {
+                line: {
+                  borderWidth: 1
+                },
+                point: {
+                  radius: 4,
+                  hitRadius: 10,
+                  hoverRadius: 4
+                }
+              }
+            }
+          });
+        }
+
+
+
+        // Recent Report
+        const brandProduct = 'rgba(0,181,233,0.8)'
+        const brandService = 'rgba(0,173,95,0.8)'
+
+        var elements = 10
+        var data1 = {{panel["tonalnost_accyracy"]}}
+        var data2 = {{panel["tonalnost_f1"]}}
+
+        var ctx = document.getElementById("recent-rep-chart");
+        if (ctx) {
+          ctx.height = 250;
+          var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', ''],
+              datasets: [
+                {
+                  label: 'Accuracy',
+                  backgroundColor: brandService,
+                  borderColor: 'transparent',
+                  pointHoverBackgroundColor: '#fff',
+                  borderWidth: 0,
+                  data: data1
+
+                },
+                {
+                  label: 'F1',
+                  backgroundColor: brandProduct,
+                  borderColor: 'transparent',
+                  pointHoverBackgroundColor: '#fff',
+                  borderWidth: 0,
+                  data: data2
+
+                }
+              ]
+            },
+            options: {
+              maintainAspectRatio: true,
+              legend: {
+                display: false
+              },
+              responsive: true,
+              scales: {
+                xAxes: [{
+                  gridLines: {
+                    drawOnChartArea: true,
+                    color: '#f2f2f2'
+                  },
+                  ticks: {
+                    fontFamily: "Poppins",
+                    fontSize: 12
+                  }
+                }],
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true,
+                    maxTicksLimit: 5,
+                    stepSize: 0.2,
+                    max: 1,
+                    fontFamily: "Poppins",
+                    fontSize: 12
+                  },
+                  gridLines: {
+                    display: true,
+                    color: '#f2f2f2'
+
+                  }
+                }]
+              },
+              elements: {
+                point: {
+                  radius: 0,
+                  hitRadius: 10,
+                  hoverRadius: 4,
+                  hoverBorderWidth: 3
+                }
+              }
+
+
+            }
+          });
+        }
+
+        // Percent Chart
+        var ctx = document.getElementById("percent-chart");
+        if (ctx) {
+          ctx.height = 280;
+          var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+              datasets: [
+                {
+                  label: "Классификация отзывов",
+                  data: {{panel["percent_reviews"]}},
+                  backgroundColor: [
+                    '#00b5e9',
+                    '#fa4251',
+                    '#00ad5f'
+                  ],
+                  hoverBackgroundColor: [
+                    '#00b5e9',
+                    '#fa4251',
+                    '#00ad5f'
+                  ],
+                  borderWidth: [
+                    0,0,0
+                  ],
+                  hoverBorderColor: [
+                    'transparent',
+                    'transparent',
+                    'transparent'
+                  ]
+                }
+              ],
+              labels: [
+                'Положительные',
+                'Нейтральные',
+                'Отрицательные'
+              ]
+            },
+            options: {
+              maintainAspectRatio: false,
+              responsive: true,
+              cutoutPercentage: 55,
+              animation: {
+                animateScale: true,
+                animateRotate: true
+              },
+              legend: {
+                display: false
+              },
+              tooltips: {
+                titleFontFamily: "Poppins",
+                xPadding: 15,
+                yPadding: 10,
+                caretPadding: 0,
+                bodyFontSize: 16
+              }
+            }
+          });
+        }
+
+      } catch (error) {
+        console.log(error);
+      }
+
+    })(jQuery);
+
+
+
+    (function ($) {
+        // USE STRICT
+        "use strict";
+        var navbars = ['header', 'aside'];
+        var hrefSelector = 'a:not([target="_blank"]):not([href^="#"]):not([class^="chosen-single"])';
+        var linkElement = navbars.map(element => element + ' ' + hrefSelector).join(', ');
+        $(".animsition").animsition({
+          inClass: 'fade-in',
+          outClass: 'fade-out',
+          inDuration: 900,
+          outDuration: 900,
+          linkElement: linkElement,
+          loading: true,
+          loadingParentElement: 'html',
+          loadingClass: 'page-loader',
+          loadingInner: '<div class="page-loader__spin"></div>',
+          timeout: false,
+          timeoutCountdown: 5000,
+          onLoadEvent: true,
+          browser: ['animation-duration', '-webkit-animation-duration'],
+          overlay: false,
+          overlayClass: 'animsition-overlay-slide',
+          overlayParentElement: 'html',
+          transition: function (url) {
+            window.location.href = url;
+          }
+        });
+
+
+      })(jQuery);
+
+    (function ($) {
+      // Use Strict
+      "use strict";
+      try {
+        var progressbarSimple = $('.js-progressbar-simple');
+        progressbarSimple.each(function () {
+          var that = $(this);
+          var executed = false;
+          $(window).on('load', function () {
+
+            that.waypoint(function () {
+              if (!executed) {
+                executed = true;
+                /*progress bar*/
+                that.progressbar({
+                  update: function (current_percentage, $this) {
+                    $this.find('.js-value').html(current_percentage + '%');
+                  }
+                });
+              }
+            }, {
+                offset: 'bottom-in-view'
+              });
+
+          });
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    })(jQuery);
+
+    (function ($) {
+      // USE STRICT
+      "use strict";
+
+      // Scroll Bar
+      try {
+        var jscr1 = $('.js-scrollbar1');
+        if(jscr1[0]) {
+          const ps1 = new PerfectScrollbar('.js-scrollbar1');
+        }
+
+        var jscr2 = $('.js-scrollbar2');
+        if (jscr2[0]) {
+          const ps2 = new PerfectScrollbar('.js-scrollbar2');
+
+        }
+
+      } catch (error) {
+        console.log(error);
+      }
+
+    })(jQuery);
+
+    (function ($) {
+      // USE STRICT
+      "use strict";
+
+      // Select 2
+      try {
+
+        $(".js-select2").each(function () {
+          $(this).select2({
+            minimumResultsForSearch: 20,
+            dropdownParent: $(this).next('.dropDownSelect2')
+          });
+        });
+
+      } catch (error) {
+        console.log(error);
+      }
+
+
+    })(jQuery);
+    (function ($) {
+      // USE STRICT
+      "use strict";
+
+      // Dropdown
+      try {
+        var menu = $('.js-item-menu');
+        var sub_menu_is_showed = -1;
+
+        for (var i = 0; i < menu.length; i++) {
+          $(menu[i]).on('click', function (e) {
+            e.preventDefault();
+            $('.js-right-sidebar').removeClass("show-sidebar");
+            if (jQuery.inArray(this, menu) == sub_menu_is_showed) {
+              $(this).toggleClass('show-dropdown');
+              sub_menu_is_showed = -1;
+            }
+            else {
+              for (var i = 0; i < menu.length; i++) {
+                $(menu[i]).removeClass("show-dropdown");
+              }
+              $(this).toggleClass('show-dropdown');
+              sub_menu_is_showed = jQuery.inArray(this, menu);
+            }
+          });
+        }
+        $(".js-item-menu, .js-dropdown").click(function (event) {
+          event.stopPropagation();
+        });
+
+        $("body,html").on("click", function () {
+          for (var i = 0; i < menu.length; i++) {
+            menu[i].classList.remove("show-dropdown");
+          }
+          sub_menu_is_showed = -1;
+        });
+
+      } catch (error) {
+        console.log(error);
+      }
+
+      var wW = $(window).width();
+        // Right Sidebar
+        var right_sidebar = $('.js-right-sidebar');
+        var sidebar_btn = $('.js-sidebar-btn');
+
+        sidebar_btn.on('click', function (e) {
+          e.preventDefault();
+          for (var i = 0; i < menu.length; i++) {
+            menu[i].classList.remove("show-dropdown");
+          }
+          sub_menu_is_showed = -1;
+          right_sidebar.toggleClass("show-sidebar");
+        });
+
+        $(".js-right-sidebar, .js-sidebar-btn").click(function (event) {
+          event.stopPropagation();
+        });
+
+        $("body,html").on("click", function () {
+          right_sidebar.removeClass("show-sidebar");
+
+        });
+
+
+      // Sublist Sidebar
+      try {
+        var arrow = $('.js-arrow');
+        arrow.each(function () {
+          var that = $(this);
+          that.on('click', function (e) {
+            e.preventDefault();
+            that.find(".arrow").toggleClass("up");
+            that.toggleClass("open");
+            that.parent().find('.js-sub-list').slideToggle("250");
+          });
+        });
+
+      } catch (error) {
+        console.log(error);
+      }
+
+
+      try {
+        $('.hamburger').on('click', function () {
+          $(this).toggleClass('is-active');
+          $('.navbar-mobile').slideToggle('500');
+        });
+        $('.navbar-mobile__list li.has-dropdown > a').on('click', function () {
+          var dropdown = $(this).siblings('ul.navbar-mobile__dropdown');
+          $(this).toggleClass('active');
+          $(dropdown).slideToggle('500');
+          return false;
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    })(jQuery);
+    (function ($) {
+      // USE STRICT
+      "use strict";
+
+      // Load more
+      try {
+        var list_load = $('.js-list-load');
+        if (list_load[0]) {
+          list_load.each(function () {
+            var that = $(this);
+            that.find('.js-load-item').hide();
+            var load_btn = that.find('.js-load-btn');
+            load_btn.on('click', function (e) {
+              $(this).text("Loading...").delay(1500).queue(function (next) {
+                $(this).hide();
+                that.find(".js-load-item").fadeToggle("slow", 'swing');
+              });
+              e.preventDefault();
+            });
+          })
+
+        }
+      } catch (error) {
+        console.log(error);
+      }
+
+    })(jQuery);
+    (function ($) {
+      // USE STRICT
+      "use strict";
+
+      try {
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+      } catch (error) {
+        console.log(error);
+      }
+
+      // Chatbox
+      try {
+        var inbox_wrap = $('.js-inbox');
+        var message = $('.au-message__item');
+        message.each(function(){
+          var that = $(this);
+
+          that.on('click', function(){
+            $(this).parent().parent().parent().toggleClass('show-chat-box');
+          });
+        });
+
+
+      } catch (error) {
+        console.log(error);
+      }
+
+    })(jQuery);
+
+    </script>
+
+</body>
+
+</html>
+<!-- end document-->
