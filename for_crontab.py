@@ -18,6 +18,7 @@ import torch.nn.functional as F
 
 MAX_LEN = 160
 
+
 PRE_TRAINED_MODEL_NAME = "blanchefort/rubert-base-cased-sentiment"
 tokenizer = BertTokenizer.from_pretrained(PRE_TRAINED_MODEL_NAME)
 
