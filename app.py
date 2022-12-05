@@ -16,6 +16,7 @@ from transformers import BertModel, BertTokenizer, AdamW, get_linear_schedule_wi
 # export FLASK_DEBUG=1
 
 
+
 app = Flask(__name__, static_url_path='/static')
 app.config['ENV'] = 'development'
 app.config['DEBUG'] = True
